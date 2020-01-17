@@ -149,6 +149,7 @@
 				<artifactId>gitflow-maven-plugin</artifactId>
 				<version>1.14.0</version>
 				<configuration>
+				<developmentBranch>master</developmentBranch>
 				</configuration>
 			</plugin>
 		</plugins>
