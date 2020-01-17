@@ -32,6 +32,8 @@
 		<maven.version>3.3.9</maven.version>
 	</properties>
 
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.maven</groupId>
@@ -149,7 +151,9 @@
 				<artifactId>gitflow-maven-plugin</artifactId>
 				<version>1.14.0</version>
 				<configuration>
-				<developmentBranch>master</developmentBranch>
+					<gitFlowConfig>
+						<developmentBranch>master</developmentBranch>
+					</gitFlowConfig>
 				</configuration>
 			</plugin>
 		</plugins>
