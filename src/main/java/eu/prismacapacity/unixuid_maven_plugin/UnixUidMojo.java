@@ -25,7 +25,7 @@ public class UnixUidMojo extends AbstractMojo {
 
 	@SuppressWarnings("restriction")
 	public void execute() throws MojoExecutionException {
-		if (System.getProperty("os.name").toLowerCase().startsWith("Windows")) {
+		if (System.getProperty("os.name").toLowerCase().startsWith("windows")) {
 			getLog().info("Skipping because windows was detected");
 		} else {
 			long uid = new com.sun.security.auth.module.UnixSystem().getUid();
