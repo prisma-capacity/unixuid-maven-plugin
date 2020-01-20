@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>eu.prismacapacity</groupId>
 	<artifactId>unixuid-maven-plugin</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<packaging>maven-plugin</packaging>
 	<name>unixuid-maven-plugin Maven Plugin</name>
 	<url>https://github.com/prisma-capacity</url>
