@@ -5,28 +5,36 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>eu.prismacapacity</groupId>
-    	<artifactId>unixuid-maven-plugin</artifactId>
+	<artifactId>unixuid-maven-plugin</artifactId>
 	<version>1.0.8-SNAPSHOT</version>
 	<packaging>maven-plugin</packaging>
 	<name>unixuid-maven-plugin Maven Plugin</name>
+	<description>Tiny maven plugin that contributes a property 'os.detected.userid' to a maven session on unix systems.</description>
 	<url>https://github.com/prisma-capacity</url>
-	    <organization>
-        <name>PRISMA European Capacity Platform GmbH</name>
-        <url>http://www.prisma-capacity.eu</url>
-    </organization>
-    <licenses>
-        <license>
-            <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-        </license>
-    </licenses>
-    <!-- Default value, should be overwritten in actual project -->
-    <inceptionYear>2020</inceptionYear>
-    <issueManagement>
-        <system>github</system>
-        <url>https://github.com/prisma-capacity/unixuid-maven-plugin/issues</url>
-    </issueManagement>
-    <scm>
+	<organization>
+		<name>PRISMA European Capacity Platform GmbH</name>
+		<url>http://www.prisma-capacity.eu</url>
+	</organization>
+	<developers>
+		<developer>
+			<id>uwe.schaefer</id>
+			<name>Uwe Schaefer</name>
+			<email>uwe.schaefer@prisma-capacity.eu</email>
+		</developer>
+	</developers>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	<!-- Default value, should be overwritten in actual project -->
+	<inceptionYear>2020</inceptionYear>
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/prisma-capacity/unixuid-maven-plugin/issues</url>
+	</issueManagement>
+	<scm>
 		<connection>scm:git:http://github.com/prisma-capacity/unixuid-maven-plugin.git</connection>
 		<developerConnection>scm:git:ssh://github.com/prisma-capacity/unixuid-maven-plugin.git</developerConnection>
 		<url>https://github.com/prisma-capacity/unixuid-maven-plugin</url>
@@ -40,8 +48,8 @@
 		<maven.compiler.target>1.7</maven.compiler.target>
 		<maven.version>3.3.9</maven.version>
 		<maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
-        <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
-        <jersey-client.version>1.18.6</jersey-client.version>
+		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
+		<jersey-client.version>1.18.6</jersey-client.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -132,31 +140,31 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
-		  
-            <plugin>
-                <groupId>kr.motd.maven</groupId>
-                <artifactId>os-maven-plugin</artifactId>
-                <version>1.6.2</version>
-                <executions>
-                    <execution>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>detect</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>com.amashchenko.maven.plugin</groupId>
-                <artifactId>gitflow-maven-plugin</artifactId>
-                <version>1.14.0</version>
-                <configuration>
-                    <gitFlowConfig>
-                        <developmentBranch>master</developmentBranch>
-                    </gitFlowConfig>
-                </configuration>
-            </plugin>
-        	<plugin>
+
+			<plugin>
+				<groupId>kr.motd.maven</groupId>
+				<artifactId>os-maven-plugin</artifactId>
+				<version>1.6.2</version>
+				<executions>
+					<execution>
+						<phase>initialize</phase>
+						<goals>
+							<goal>detect</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.amashchenko.maven.plugin</groupId>
+				<artifactId>gitflow-maven-plugin</artifactId>
+				<version>1.14.0</version>
+				<configuration>
+					<gitFlowConfig>
+						<developmentBranch>master</developmentBranch>
+					</gitFlowConfig>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-plugin-plugin</artifactId>
 				<version>3.6.0</version>
@@ -183,60 +191,60 @@
 	</build>
 
 	<profiles>
-	       <profile>
-            <id>oss.release-sign-artifacts</id>
-            <activation>
-                <property>
-                    <name>ossrh</name>
-                </property>
-            </activation>
-            <distributionManagement>
-                <snapshotRepository>
-                    <id>ossrh</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-                </snapshotRepository>
-                <repository>
-                    <id>ossrh</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                </repository>
-            </distributionManagement>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>${maven-gpg-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>${nexus-staging-maven-plugin.version}</version>
-                        <extensions>true</extensions>
-                        <configuration>
-                            <serverId>ossrh</serverId>
-                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                        </configuration>
-                        <dependencies>
-                            <dependency>
-                                <groupId>com.sun.jersey</groupId>
-                                <artifactId>jersey-client</artifactId>
-                                <version>${jersey-client.version}</version>
-                            </dependency>
-                        </dependencies>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+		<profile>
+			<id>oss.release-sign-artifacts</id>
+			<activation>
+				<property>
+					<name>ossrh</name>
+				</property>
+			</activation>
+			<distributionManagement>
+				<snapshotRepository>
+					<id>ossrh</id>
+					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+				</snapshotRepository>
+				<repository>
+					<id>ossrh</id>
+					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+				</repository>
+			</distributionManagement>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>${maven-gpg-plugin.version}</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>${nexus-staging-maven-plugin.version}</version>
+						<extensions>true</extensions>
+						<configuration>
+							<serverId>ossrh</serverId>
+							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<autoReleaseAfterClose>true</autoReleaseAfterClose>
+						</configuration>
+						<dependencies>
+							<dependency>
+								<groupId>com.sun.jersey</groupId>
+								<artifactId>jersey-client</artifactId>
+								<version>${jersey-client.version}</version>
+							</dependency>
+						</dependencies>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 		<profile>
 			<id>run-its</id>
 			<build>
