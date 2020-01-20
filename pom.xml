@@ -10,7 +10,7 @@
 		<version>0.1.1</version>
 	</parent>
 	<artifactId>unixuid-maven-plugin</artifactId>
-	<version>1.0.3-SNAPSHOT</version>
+	<version>1.0.3</version>
 	<packaging>maven-plugin</packaging>
 	<name>unixuid-maven-plugin Maven Plugin</name>
 	<url>https://github.com/prisma-capacity</url>
