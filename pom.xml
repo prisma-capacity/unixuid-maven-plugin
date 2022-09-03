@@ -160,7 +160,8 @@
 				<version>1.18.0</version>
 				<configuration>
 					<gitFlowConfig>
-						<developmentBranch>master</developmentBranch>
+						<developmentBranch>main</developmentBranch>
+						<productionBranch>main</productionBranch>
 					</gitFlowConfig>
 				</configuration>
 			</plugin>
