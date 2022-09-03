@@ -6,7 +6,7 @@
 
 	<groupId>eu.prismacapacity</groupId>
 	<artifactId>unixuid-maven-plugin</artifactId>
-	<version>1.0.9-SNAPSHOT</version>
+	<version>1.0.9</version>
 	<packaging>maven-plugin</packaging>
 	<name>unixuid-maven-plugin Maven Plugin</name>
 	<description>Tiny maven plugin that contributes a property 'os.detected.userid' to a maven session on unix systems.</description>
