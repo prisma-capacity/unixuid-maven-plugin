@@ -1,3 +1,6 @@
+This project is no longer needed and is archived.
+
+
 <div align="right"><a target="myNextJob" href="https://www.prisma-capacity.eu/careers#job-offers">
     <img class="inline" src="prisma.png">
 </a></div>
